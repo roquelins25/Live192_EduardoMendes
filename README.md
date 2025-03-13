@@ -86,3 +86,75 @@ No que se baseia uma boa estrutura?
 - Seperação de responsabilidade  
   - Cada coisa deve esta no seu lugar  
 <img src="/img/Nosso_Projeto.png">
+
+Todos Codigos tem que ficar no Codigo Fonte e todos os teste fica na pasta teste
+src = source ( utilizado para por colocar os dados )
+
+
+Arquitetura é importante
+IMAGEM 2
+isso é muito comum de acontecer, gerar varios arquivos e colocar versões.
+
+Ferramentas Utilizadas
+Qual a versão do PYTHON utilizar? 
+Sempre usar a Ultima versão possivel ( porem existe algumas bibliotecas grandes nao tem suporte nos ultimos, nesse caso buscar qual a versão ideal para sua biblioteca )
+A importancia do Python estar atualizados por motivo de funcionalidades novas.
+
+Pyenv - é bom para utilizar sobre a atualização de python
+Como instalar (Windows)
+    1. Abrir site do pyenv win no github 'https://github.com/pyenv-win/pyenv-win'
+    2. Executar terminal modo administrador
+    3. seguir o passo a passo ( site do pyenv-win):
+        a. Executar comando = Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+            a.1. Caso tenha encontrado erro como 'não pode ser carregado porque a execução de scripts foi
+desabilitada neste sistema. Para obter mais informações' executar os comandos de autorizações do powershell.
+            a.2. Executar comando 'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser'
+            a.3. Autorizar todo comando A ou S
+        b. Precisa verificar se o BAHS esta sendo executado com Pyenv
+            b.1. Abrir BASH git:
+                Executar comando pyenv --version
+                Caso Aparece a versão do pyenv esta tudo 'OK' em caso de erro Segue os passo a passo:
+                b.1.1 - Pesquisar por Variaveis do Ambiente ( Editar as variaveis de ambiente para sua conta)
+                        avançado 
+                        #( Dentro de Documentos o Pyenv por padrão cria uma pasta para executar, Abrir esse local)
+                        -Click na pasta pyenv-win dentro de .pyenv/pyenv-win = copiar caminho da pasta
+                        - Novo => e adcionar as seguintes ambientes
+                          - PYENV
+                          - PYENV_ROOT
+                          - PYENV_HOME
+                        # Todos os 3 com o mesmo local copiado - Retirar as  "ASPAS" do caminho copiado
+                b.1.2 - PATH:
+                        Clicar 2x no ambiente path e adicionar 2 modos:
+                          - bin ( copiar caminho dentro da pasta .pyenv/pyenv-win/bin )
+                          - shims (copiar caminho dentro da pasta .pyenv/pyenv-win/shims)
+                    # Mover todos eles para cima ( deixando e 1 lugar )
+                        - OK em Tudo
+        b. pyenv versions ( verifica todas as versões do python dentro do pyenv)
+        c. pyenv global 'versão mais recente' ( esse comando eu estou configurando a versão do meu python globalmente)
+           pyenv local 'versão python' ( esse comando eu utilizo quando quero instalar versões diferentes dentro de cada pasta do meu projeto)
+            - Para isso tem que entrar dentro da pasta desejada "COMANDO(CD.. => 'Nome do caminho' => pyenv local 'versão' )
+
+
+# Ambientes Virtuais
+#-pip freeze | grep -v "^-e" | xargs pip uninstall -y ( dica top para limpar e desisnstalar as bibliotecas geral )
+    - 1. O que se preocupar?
+      - Versão do python dentro da pasta a ser executada
+      - Dependencias dentro do codigo
+      - Sempre criar um ambiente virtual para cada pasta
+    - 2. Como fazer?
+      - 1. Installar o Ambiente virtal dentro da pasta
+            1.a - Abrir vsCode na pasta
+            1.b - executar comando no terminal ( python -m venv .venv)
+      - 2. Ativar ambiente virtual
+        - executar comando no terminal ( source .venv/Scripts/activate )
+      - 3. Pode instalalar as Bibliotecas
+        - executar comando no terminal ( pip install 'nome da biblioteca' )
+      - 4. Sair do ambiente virtutal
+        -  executar comando no terminal ( deactivate )
+
+
+
+
+
+
+        pyenv install "Versão do python desejada '3.10.2' "
