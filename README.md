@@ -146,15 +146,26 @@ desabilitada neste sistema. Para obter mais informações' executar os comandos 
             1.a - Abrir vsCode na pasta
             1.b - executar comando no terminal ( python -m venv .venv)
       - 2. Ativar ambiente virtual
-        - executar comando no terminal ( source .venv/Scripts/activate )
+        - executar comando no terminal ( .venv/Scripts/activate )
       - 3. Pode instalalar as Bibliotecas
         - executar comando no terminal ( pip install 'nome da biblioteca' )
       - 4. Sair do ambiente virtutal
         -  executar comando no terminal ( deactivate )
+   - Poetry 
+   - 1. Instalando o POETRY
+     - A.1. - Executar comando (pip install poetry) 
+   - 2. Executando o POETRY
+     - A.1 Iniciando o Projeto do inicio
+       - Executar ( poetry init -n )
+            *Cria um arquivo pyproject.toml
+     - A.2. Instalando Ambiente Virtual
+       - Poetry install
 
 
 
 
 
-
-        pyenv install "Versão do python desejada '3.10.2' "
+     - Poetry init # Inciará o projeto
+     - Poetry shell #Incia o Ambiente Virtual
+     - Poetry add <PACOTE> #Instala Pacotes
+     - Poetry add --dev <PACOTE> #instala pacote para desenvolvimento
